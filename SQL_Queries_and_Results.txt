@@ -1,0 +1,61 @@
+1. Count the Total Number of Shows:
+
+SELECT COUNT(*) AS total_shows FROM netflix_titles;
+
+RESULT = 100
+
+2. Average Duration of Movies:
+
+SELECT AVG(CAST(REPLACE(duration, ' min', '') AS UNSIGNED)) AS avg_movie_duration 
+FROM netflix_titles 
+WHERE type = 'Movie';
+
+RESULT = 100.7273 MINUTES
+
+3.Cool Facts:
+
+Total Number of TV Shows:
+
+SELECT COUNT(*) AS total_tv_shows FROM netflix_titles WHERE type = 'TV Show';
+
+RESULT = 45
+
+Most Common Rating:
+
+SELECT rating, COUNT(*) AS count FROM netflix_titles GROUP BY rating ORDER BY count DESC LIMIT 1;
+
+RESULT = TV-MA 32
+
+
+4.Formulate Questions and Write SQL Queries
+Question 1: What are the top 5 countries producing the most content on Netflix?
+
+
+SELECT country, COUNT(*) AS total_content 
+FROM netflix_titles 
+GROUP BY country 
+ORDER BY total_content DESC 
+LIMIT 5;
+
+RESULT = UNITED STATES 17
+         JAPAN 13
+         INDIA 6
+         UNITED KINGDOM 5
+
+Question 2: What are the top 5 genres with the most content on Netflix?
+
+SELECT listed_in, COUNT(*) AS total_content 
+FROM netflix_titles 
+GROUP BY listed_in 
+ORDER BY total_content DESC 
+LIMIT 5;
+
+RESULT = ACTION & ADVENTURE, ANIME FEATURES,INTERNATIONAL 12
+         CHILDREN & FAMILY 6
+         KIDS 5
+         REALITY 4
+         COMEDIES 3
+
+
+
+
