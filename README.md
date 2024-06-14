@@ -8,8 +8,8 @@ This repository contains an analysis of the Netflix Shows dataset using MySQL.
 3. [Difficulties Encountered](#difficulties-encountered)
 4. [Interesting Observations](#interesting-observations)
 5. [Future Work](#future-work)
-6. [SQL Queries and Results](#sql-queries-and-results)
-7. [Insights Learned](#insights-learned)
+6. [Insights Learned](#insights-learned)
+7. [Charts and Visualizations](#charts-and-visualizations)
 8. [SQL Queries Document](#sql-queries-document)
 
 ## Dataset Description
@@ -18,15 +18,12 @@ The Netflix Shows dataset includes information about various shows available on 
 
 ## Importing Dataset into MySQL Workbench
 
-1. **Installing MySQL Workbench**:
-   - Download and install MySQL Workbench from the [official MySQL website](https://dev.mysql.com/downloads/workbench/).
-
-2. **Creating a New Database**:
+1. **Creating a New Database**:
    - Open MySQL Workbench and connect to your MySQL server.
    - In the `Schemas` tab, right-click and select `Create Schema`.
    - Name your schema (e.g., `netflix_shows`) and apply.
 
-3. **Importing the Dataset**:
+2. **Importing the Dataset**:
    - Right-click on your database (schema) in the `Schemas` tab and select `Table Data Import Wizard`.
    - Select the CSV file (`netflix_titles.csv`).
    - Map the columns from the CSV to the table columns in MySQL. You can let MySQL Workbench create a new table for you during the import process.
@@ -46,80 +43,21 @@ In the future, further analysis could be performed on this dataset, such as:
 - Examining the distribution of content ratings.
 - Investigating the representation of different genres and countries.
 
-## SQL Queries and Results
+## Insights Learned
+## Charts and Visualizations
 
-### Data Fun
+**Top 5 Countries:**
 
-**1. Count the Total Number of Shows:**
+The top 5 countries producing the most content on Netflix include the United States, India, United Kingdom, Japan, and South Korea. This indicates a strong production base in these countries.
+![top5 countries](https://github.com/kepher99/MySQL-Dataset-Analysis/assets/84464425/f6d6bbc0-ffec-4ed4-bdd6-c08730f36704)
 
-```sql
-SELECT COUNT(*) AS total_shows FROM netflix_titles;
-Result: 100
+**Top 5 Genres:**
 
-2. Average Duration of Movies:
+The top 5 genres with the most content on Netflix are International Movies, Dramas, Comedies, International TV Shows, and Documentaries. This shows a diverse range of popular genres on the platform.
+![genres](https://github.com/kepher99/MySQL-Dataset-Analysis/assets/84464425/2e9a6b84-550e-45d7-89d4-c22e265a7a8c)
 
+## SQL Queries Document
 
-SELECT AVG(CAST(REPLACE(duration, ' min', '') AS UNSIGNED)) AS avg_movie_duration 
-FROM netflix_titles 
-WHERE type = 'Movie';
-Result: 100.7273 minutes
+All the SQL queries and their results are documented in the `SQL_Queries_and_Results.txt` file. You can download it using the link below:
 
-Cool Facts
-1. Total Number of TV Shows:
-
-
-SELECT COUNT(*) AS total_tv_shows FROM netflix_titles WHERE type = 'TV Show';
-Result: 45
-
-2. Most Common Rating:
-
-sql
-Copy code
-SELECT rating, COUNT(*) AS count 
-FROM netflix_titles 
-GROUP BY rating 
-ORDER BY count DESC 
-LIMIT 1;
-Result: TV-MA (32 shows)
-
-Ask Away
-Question 1: What are the top 5 countries producing the most content on Netflix?
-
-
-SELECT country, COUNT(*) AS total_content 
-FROM netflix_titles 
-GROUP BY country 
-ORDER BY total_content DESC 
-LIMIT 5;
-Result:
-
-United States: 17
-Japan: 13
-India: 6
-United Kingdom: 5
-Question 2: What are the top 5 genres with the most content on Netflix?
-
-
-SELECT listed_in, COUNT(*) AS total_content 
-FROM netflix_titles 
-GROUP BY listed_in 
-ORDER BY total_content DESC 
-LIMIT 5;
-Result:
-
-Action & Adventure, Anime Features, International: 12
-Children & Family: 6
-Kids: 5
-Reality: 4
-Comedies: 3
-Insights Learned
-Top 5 Countries:
-
-The top 5 countries producing the most content on Netflix include the United States, Japan, India, and the United Kingdom. This indicates a strong production base in these countries.
-
-Top 5 Genres:
-
-The top 5 genres with the most content on Netflix are Action & Adventure, Anime Features, International, Children & Family, Kids, Reality, and Comedies. This shows a diverse range of popular genres on the platform.
-
-SQL Queries Document
-All the SQL queries and their results are documented in SQL_Queries_and_Results.txt.
+[Download SQL Queries and Results](sandbox:/mnt/data/SQL_Queries_and_Results.txt)
