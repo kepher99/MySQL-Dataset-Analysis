@@ -1,61 +1,51 @@
-1. Count the Total Number of Shows:
+SQL Queries and Results
 
+1. Total Number of Shows:
 SELECT COUNT(*) AS total_shows FROM netflix_titles;
-
-RESULT = 100
+Result: 8807
 
 2. Average Duration of Movies:
-
 SELECT AVG(CAST(REPLACE(duration, ' min', '') AS UNSIGNED)) AS avg_movie_duration 
 FROM netflix_titles 
 WHERE type = 'Movie';
+Result: 99.58 minutes
 
-RESULT = 100.7273 MINUTES
-
-3.Cool Facts:
-
-Total Number of TV Shows:
-
+Cool Facts
+1. Total Number of TV Shows:
 SELECT COUNT(*) AS total_tv_shows FROM netflix_titles WHERE type = 'TV Show';
+Result: 2676
 
-RESULT = 45
+2. Most Common Rating:
+SELECT rating, COUNT(*) AS count 
+FROM netflix_titles 
+GROUP BY rating 
+ORDER BY count DESC 
+LIMIT 1;
+Result: TV-MA (3207 shows)
 
-Most Common Rating:
-
-SELECT rating, COUNT(*) AS count FROM netflix_titles GROUP BY rating ORDER BY count DESC LIMIT 1;
-
-RESULT = TV-MA 32
-
-
-4.Formulate Questions and Write SQL Queries
+Ask Away
 Question 1: What are the top 5 countries producing the most content on Netflix?
-
-
 SELECT country, COUNT(*) AS total_content 
 FROM netflix_titles 
 GROUP BY country 
 ORDER BY total_content DESC 
 LIMIT 5;
-
-RESULT = UNITED STATES 17
-         JAPAN 13
-         INDIA 6
-         UNITED KINGDOM 5
+Result:
+- United States: 2818
+- India: 972
+- United Kingdom: 419
+- Japan: 245
+- South Korea: 199
 
 Question 2: What are the top 5 genres with the most content on Netflix?
-
 SELECT listed_in, COUNT(*) AS total_content 
 FROM netflix_titles 
 GROUP BY listed_in 
 ORDER BY total_content DESC 
 LIMIT 5;
-
-RESULT = ACTION & ADVENTURE, ANIME FEATURES,INTERNATIONAL 12
-         CHILDREN & FAMILY 6
-         KIDS 5
-         REALITY 4
-         COMEDIES 3
-
-
-
-
+Result:
+- International Movies: 2752
+- Dramas: 2427
+- Comedies: 1674
+- International TV Shows: 1351
+- Documentaries: 869
