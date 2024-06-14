@@ -66,6 +66,4 @@ The top rating  with the most shows on Netflix is TV-MA. This shows more adult c
 
 ## SQL Queries Document
 
-All the SQL queries and their results are documented in the `SQL_Queries_and_Results.txt` file. You can download it using the link below:
-
-[Download SQL Queries and Results](sandbox:/mnt/data/SQL_Queries_and_Results.txt)
+All the SQL queries and their results are documented in the `SQL_Queries_and_Results.txt` file.
