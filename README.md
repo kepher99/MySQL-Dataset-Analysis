@@ -1,6 +1,7 @@
 # Netflix Shows MySQL Analysis
 
 This repository contains an analysis of the Netflix Shows dataset using MySQL.
+
 pitch deck link: https://gamma.app/docs/Netflix-Shows-MySQL-Analysis-zlg3vgaytxdvtiz
 
 ## Table of Contents
