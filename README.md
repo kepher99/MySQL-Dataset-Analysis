@@ -48,13 +48,19 @@ In the future, further analysis could be performed on this dataset, such as:
 
 **Top 5 Countries:**
 
-The top 5 countries producing the most content on Netflix include the United States, India, United Kingdom, Japan, and South Korea. This indicates a strong production base in these countries.
+The top 5 countries producing the most content on Netflix include the United States, India, the United Kingdom, Japan, and South Korea. This indicates a strong production base in these countries.
 ![top5 countries](https://github.com/kepher99/MySQL-Dataset-Analysis/assets/84464425/f6d6bbc0-ffec-4ed4-bdd6-c08730f36704)
 
 **Top 5 Genres:**
 
 The top 5 genres with the most content on Netflix are International Movies, Dramas, Comedies, International TV Shows, and Documentaries. This shows a diverse range of popular genres on the platform.
 ![genres](https://github.com/kepher99/MySQL-Dataset-Analysis/assets/84464425/2e9a6b84-550e-45d7-89d4-c22e265a7a8c)
+
+**Total Shows by Rating:**
+
+The top rating  with the most shows on Netflix is TV-MA. This shows more adult content is on-demand and popular on the platform.
+
+![rating](https://github.com/kepher99/MySQL-Dataset-Analysis/assets/84464425/bcf6936d-f0b8-4d40-ae11-f4338c45abda)
 
 ## SQL Queries Document
 
